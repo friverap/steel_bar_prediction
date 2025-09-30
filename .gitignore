@@ -174,4 +174,3 @@ deploy_local.sh
 !README.md
 !.gitignore
 !deploy_production.py
-notebooks/01_data_exploration.ipynb
