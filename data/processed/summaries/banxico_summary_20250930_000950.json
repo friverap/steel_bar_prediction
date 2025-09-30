@@ -1,0 +1,20 @@
+{
+  "source": "banxico",
+  "timestamp": "2025-09-30T00:09:50.657572",
+  "config": {
+    "collector_func": "<function collect_banxico_data at 0x11cef2700>",
+    "description": "Banxico - Tipo de cambio, TIIE, UDIS",
+    "priority": "critical",
+    "frequency": "daily",
+    "status": "functional",
+    "expected_series": 6,
+    "params": {
+      "start_date": "2020-01-01",
+      "end_date": "2025-09-30"
+    }
+  },
+  "data_counts": {
+    "series": 8,
+    "points": 6601
+  }
+}

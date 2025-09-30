@@ -1,0 +1,129 @@
+# version: '3.8'  # Comentado para evitar warning en nuevas versiones de Docker Compose
+
+services:
+  # Servicio principal de predicción
+  steel-predictor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: deacero-steel-predictor-v2
+    ports:
+      - "8000:8000"
+    environment:
+      # Configuración de la aplicación
+      - HOST=0.0.0.0
+      - PORT=8000
+      - DEBUG=false
+      - LOG_LEVEL=INFO
+      
+      # API Keys (cargar desde .env)
+      - BANXICO_API_TOKEN=${BANXICO_API_TOKEN}
+      - FRED_API_KEY=${FRED_API_KEY}
+      - INEGI_API_TOKEN=${INEGI_API_TOKEN}
+      - QUANDL_API_KEY=${QUANDL_API_KEY}
+      - TRADING_ECONOMICS_API_KEY=${TRADING_ECONOMICS_API_KEY}
+      
+      # Configuración del pipeline
+      - INIT_PIPELINE=true
+      - MODEL_UPDATE_INTERVAL_HOURS=24
+      - CACHE_EXPIRE_HOURS=4
+      - MAX_REQUESTS_PER_HOUR=100
+      
+      # Timezone
+      - TZ=America/Mexico_City
+    
+    volumes:
+      # Persistir datos y modelos
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./logs:/app/logs
+      - ./.env:/app/.env:ro
+    
+    networks:
+      - steel-predictor-network
+    
+    restart: unless-stopped
+    
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+  
+  # Servicio de Redis para cache (opcional)
+  redis-cache:
+    image: redis:7-alpine
+    container_name: deacero-redis-cache
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    volumes:
+      - redis-data:/data
+    networks:
+      - steel-predictor-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Servicio de monitoreo (opcional)
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: deacero-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus-data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=30d'
+      - '--web.enable-lifecycle'
+    networks:
+      - steel-predictor-network
+    restart: unless-stopped
+    profiles:
+      - monitoring
+
+  # Dashboard de métricas (opcional)
+  grafana:
+    image: grafana/grafana:latest
+    container_name: deacero-grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=deacero2025
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./monitoring/grafana/dashboards:/etc/grafana/provisioning/dashboards:ro
+      - ./monitoring/grafana/datasources:/etc/grafana/provisioning/datasources:ro
+    networks:
+      - steel-predictor-network
+    restart: unless-stopped
+    profiles:
+      - monitoring
+
+networks:
+  steel-predictor-network:
+    driver: bridge
+    name: deacero-network
+
+volumes:
+  redis-data:
+    name: deacero-redis-data
+  prometheus-data:
+    name: deacero-prometheus-data
+  grafana-data:
+    name: deacero-grafana-data

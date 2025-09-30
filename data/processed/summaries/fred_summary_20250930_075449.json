@@ -1,0 +1,21 @@
+{
+  "source": "fred",
+  "timestamp": "2025-09-30T07:54:49.635092",
+  "config": {
+    "collector_func": "<function collect_fred_data at 0xffff6e1125c0>",
+    "description": "FRED - Indicadores econ\u00f3micos US",
+    "priority": "critical",
+    "frequency": "daily",
+    "status": "functional",
+    "expected_series": 8,
+    "params": {
+      "start_date": "2020-01-01",
+      "end_date": "2025-09-30",
+      "save_raw": true
+    }
+  },
+  "data_counts": {
+    "series": 8,
+    "points": 3276
+  }
+}

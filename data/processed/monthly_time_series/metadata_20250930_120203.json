@@ -1,0 +1,54 @@
+{
+  "timestamp_generacion": "20250930_120203",
+  "fecha_corte_actualizacion": "2025-01-01",
+  "total_series": 9,
+  "total_observaciones": 68,
+  "rango_temporal": {
+    "inicio": "2020-01-01",
+    "fin": "2025-08-01"
+  },
+  "series_incluidas": [
+    "gasto_construccion_usa",
+    "indice_precios_productor_metales_usa",
+    "tasa_fed_usa",
+    "produccion_industrial_usa",
+    "precio_chatarra_acero_usa",
+    "produccion_acero_usa",
+    "produccion_construccion_mexico",
+    "produccion_metalurgica_mexico",
+    "inflacion_mensual_mexico"
+  ],
+  "fuentes": {
+    "FRED": [
+      "gasto_construccion_usa",
+      "indice_precios_productor_metales_usa",
+      "tasa_fed_usa",
+      "produccion_industrial_usa",
+      "precio_chatarra_acero_usa",
+      "produccion_acero_usa"
+    ],
+    "INEGI": [
+      "produccion_construccion_mexico",
+      "produccion_metalurgica_mexico"
+    ],
+    "Banxico": [
+      "inflacion_mensual_mexico"
+    ]
+  },
+  "estadisticas": {
+    "porcentaje_completitud": 99.83660130718954,
+    "valores_no_nulos": 611,
+    "valores_nulos": 1
+  },
+  "completitud_por_variable": {
+    "gasto_construccion_usa": 98.52941176470588,
+    "indice_precios_productor_metales_usa": 100.0,
+    "tasa_fed_usa": 100.0,
+    "produccion_industrial_usa": 100.0,
+    "precio_chatarra_acero_usa": 100.0,
+    "produccion_acero_usa": 100.0,
+    "produccion_construccion_mexico": 100.0,
+    "produccion_metalurgica_mexico": 100.0,
+    "inflacion_mensual_mexico": 100.0
+  }
+}

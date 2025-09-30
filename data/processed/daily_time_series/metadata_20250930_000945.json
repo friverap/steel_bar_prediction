@@ -1,0 +1,94 @@
+{
+  "timestamp_generacion": "20250930_000945",
+  "fecha_corte_actualizacion": "2025-01-01",
+  "estrategia_fines_semana": "business_days",
+  "total_series": 24,
+  "total_observaciones": 1498,
+  "rango_temporal": {
+    "inicio": "2020-01-02",
+    "fin": "2025-09-29"
+  },
+  "analisis_gaps": {
+    "total_dias": 1498,
+    "dias_habiles": 1197,
+    "gaps_fin_semana": 300,
+    "otros_gaps": 0,
+    "max_gap_dias": 3,
+    "pct_dias_habiles": 79.95991983967936
+  },
+  "series_incluidas": [
+    "precio_varilla_lme",
+    "cobre_lme",
+    "aluminio_lme",
+    "zinc_lme",
+    "iron",
+    "steel",
+    "coking",
+    "VIX",
+    "dxy",
+    "emerging",
+    "Petroleo",
+    "gas_natural",
+    "treasury",
+    "commodities",
+    "materials",
+    "infrastructure",
+    "sp500",
+    "china",
+    "tiie_28_dias",
+    "udis_valor",
+    "tasa_interes_banxico",
+    "tipo_cambio_usdmxn",
+    "gas_natural_fred_fred",
+    "dxy_index_fred_fred"
+  ],
+  "fuentes": {
+    "LME": [
+      "precio_varilla_lme",
+      "cobre_lme",
+      "aluminio_lme",
+      "zinc_lme"
+    ],
+    "YahooFinance": [
+      "sp500"
+    ],
+    "Banxico": [
+      "tiie_28_dias",
+      "udis_valor",
+      "tipo_cambio_usdmxn"
+    ],
+    "AHMSA": [],
+    "RawMaterials": [],
+    "FRED": [
+      "gas_natural_fred_fred",
+      "dxy_index_fred_fred"
+    ]
+  },
+  "estadisticas": {
+    "porcentaje_completitud": 96.63440142412105,
+    "valores_no_nulos": 34742,
+    "valores_nulos": 1210
+  },
+  "completitud_por_variable": {
+    "precio_varilla_lme": 100.0,
+    "cobre_lme": 96.52870493991989,
+    "aluminio_lme": 96.39519359145527,
+    "zinc_lme": 96.52870493991989,
+    "iron": 96.26168224299066,
+    "steel": 96.32843791722297,
+    "coking": 96.26168224299066,
+    "VIX": 96.32843791722297,
+    "dxy": 96.46194926568758,
+    "emerging": 96.32843791722297,
+    "Petroleo": 96.46194926568758,
+    "gas_natural": 96.52870493991989,
+    "treasury": 96.26168224299066,
+    "commodities": 96.26168224299066,
+    "materials": 96.32843791722297,
+    "infrastructure": 96.26168224299066,
+    "sp500": 96.26168224299066,
+    "china": 96.32843791722297,
+    "tiie_28_dias": 96.52870493991989,
+    "udis_valor": 100.0
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "source": "lme",
+  "timestamp": "2025-09-29T22:51:06.752771",
+  "config": {
+    "collector_func": "<function collect_lme_data at 0x169e04220>",
+    "description": "LME - Metales (cobre, zinc, aluminio) SIN steel rebar",
+    "priority": "critical",
+    "frequency": "daily",
+    "status": "functional",
+    "expected_series": 4,
+    "params": {
+      "start_date": "2020-01-01",
+      "end_date": "2025-09-29"
+    }
+  },
+  "data_counts": {
+    "series": 9,
+    "points": 12985
+  }
+}

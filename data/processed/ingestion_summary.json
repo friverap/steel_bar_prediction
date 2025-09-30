@@ -1,0 +1,28 @@
+{
+  "timestamp": "2025-09-30T12:06:00.842214",
+  "period": {
+    "start": "2020-01-01",
+    "end": "2025-09-30"
+  },
+  "sources": {
+    "total": 7,
+    "successful": 7,
+    "failed": 0
+  },
+  "data": {
+    "total_series": 66,
+    "total_points": 65682
+  },
+  "details": {
+    "successful": [
+      "steel_rebar_real",
+      "yahoo_finance",
+      "raw_materials",
+      "banxico",
+      "fred",
+      "lme",
+      "inegi"
+    ],
+    "failed": []
+  }
+}

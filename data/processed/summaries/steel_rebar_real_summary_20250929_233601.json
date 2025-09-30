@@ -1,0 +1,17 @@
+{
+  "source": "steel_rebar_real",
+  "timestamp": "2025-09-29T23:36:01.141466",
+  "config": {
+    "collector_func": "<bound method DataIngestionMaster._update_steel_rebar_real of <__main__.DataIngestionMaster object at 0x1119de900>>",
+    "description": "Steel Rebar Real - Investing.com (USD/tonelada)",
+    "priority": "critical",
+    "frequency": "daily",
+    "status": "functional",
+    "expected_series": 1,
+    "params": {}
+  },
+  "data_counts": {
+    "series": 1,
+    "points": 1498
+  }
+}

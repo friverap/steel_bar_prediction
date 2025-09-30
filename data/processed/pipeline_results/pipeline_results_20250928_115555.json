@@ -1,0 +1,373 @@
+{
+  "execution_id": "20250928_115555",
+  "start_time": "2025-09-28T11:55:55.811226",
+  "stages": {
+    "data_ingestion": {
+      "status": "success",
+      "sources_successful": 9,
+      "sources_failed": 1,
+      "total_series": 73,
+      "total_points": 74813
+    },
+    "data_consolidation": {
+      "status": "success",
+      "daily_consolidation": {
+        "success": true,
+        "shape": [
+          1496,
+          28
+        ]
+      },
+      "monthly_consolidation": {
+        "success": true,
+        "shape": [
+          68,
+          9
+        ]
+      }
+    },
+    "data_cleaning": {
+      "status": "success",
+      "validation_report": {
+        "overall_quality": 1.0,
+        "target_variable_quality": 1.0,
+        "total_observations": 1496,
+        "total_variables": 28,
+        "null_cells": "0",
+        "data_range": {
+          "start": "2020-01-02",
+          "end": "2025-09-25"
+        },
+        "business_days_only": "True",
+        "quality_grade": "EXCELENTE",
+        "production_ready": "True",
+        "validation_timestamp": "2025-09-28T11:56:31.114082"
+      },
+      "daily_shape": [
+        1496,
+        28
+      ],
+      "monthly_shape": [
+        67,
+        9
+      ],
+      "data_quality_grade": "EXCELENTE",
+      "files_saved": [
+        "/app/data/processed/clean_daily_series_latest.csv"
+      ]
+    },
+    "feature_engineering": {
+      "status": "success",
+      "features_shape": [
+        1496,
+        69
+      ],
+      "features_created": 69,
+      "target_variable": "precio_varilla_lme",
+      "models_prepared": [
+        "XGBoost_V2_regime",
+        "MIDAS_V2_hibrida"
+      ],
+      "features_file": "/app/data/processed/features_v2_latest.csv"
+    },
+    "prediction": {
+      "status": "success",
+      "predictions": {
+        "MIDAS_V2_hibrida": {
+          "model_name": "MIDAS_V2_hibrida",
+          "prediction": 2.0039737248484255,
+          "confidence_interval": {
+            "lower": 1.9765964938480471,
+            "upper": 2.031350955848804
+          },
+          "confidence_score": 0.9745305710142549,
+          "features_used": [
+            "midas_feature_0",
+            "midas_feature_1",
+            "midas_feature_2",
+            "midas_feature_3",
+            "midas_feature_4",
+            "midas_feature_5",
+            "midas_feature_6",
+            "midas_feature_7",
+            "midas_feature_8",
+            "midas_feature_9",
+            "midas_feature_10",
+            "midas_feature_11",
+            "midas_feature_12",
+            "midas_feature_13",
+            "midas_feature_14",
+            "midas_feature_15",
+            "midas_feature_16",
+            "midas_feature_17",
+            "midas_feature_18",
+            "midas_feature_19",
+            "midas_feature_20",
+            "midas_feature_21",
+            "midas_feature_22",
+            "midas_feature_23",
+            "midas_feature_24",
+            "midas_feature_25",
+            "midas_feature_26",
+            "midas_feature_27",
+            "midas_feature_28",
+            "midas_feature_29",
+            "midas_feature_30",
+            "midas_feature_31",
+            "midas_feature_32",
+            "midas_feature_33",
+            "midas_feature_34",
+            "midas_feature_35",
+            "midas_feature_36",
+            "midas_feature_37",
+            "midas_feature_38",
+            "midas_feature_39",
+            "midas_feature_40",
+            "midas_feature_41",
+            "midas_feature_42",
+            "midas_feature_43",
+            "midas_feature_44",
+            "midas_feature_45",
+            "midas_feature_46",
+            "midas_feature_47",
+            "midas_feature_48",
+            "midas_feature_49",
+            "midas_feature_50",
+            "midas_feature_51",
+            "midas_feature_52",
+            "midas_feature_53"
+          ],
+          "historical_metrics": {
+            "model": "MIDAS_v2_hibrida_test",
+            "rmse": 0.013967975000193037,
+            "mae": 0.010090641805411055,
+            "mape": 0.4882667398540574,
+            "r2": 0.9745305710142549,
+            "directional_accuracy": 88.21428571428571,
+            "hit_rate_2pct": 98.57651245551602,
+            "hit_rate_5pct": 100.0
+          }
+        }
+      },
+      "best_model": "MIDAS_V2_hibrida",
+      "prediction_timestamp": "2025-09-28T11:56:31.307897"
+    },
+    "explainability": {
+      "status": "success",
+      "models_analyzed": [
+        "XGBoost_V2_regime"
+      ],
+      "causal_factors": [
+        {
+          "factor_name": "price_ma20",
+          "average_importance": 0.8166133165359497,
+          "category": "Autorregresivo",
+          "models_using": [
+            "XGBoost_V2_regime"
+          ],
+          "description": "Media m\u00f3vil de 20 d\u00edas"
+        },
+        {
+          "factor_name": "current_price",
+          "average_importance": 0.1506526917219162,
+          "category": "Autorregresivo",
+          "models_using": [
+            "XGBoost_V2_regime"
+          ],
+          "description": "Precio actual (feature cr\u00edtica V2)"
+        },
+        {
+          "factor_name": "tasa_interes_banxico",
+          "average_importance": 0.00694234436377883,
+          "category": "Tasas de Inter\u00e9s",
+          "models_using": [
+            "XGBoost_V2_regime"
+          ],
+          "description": "Tasa de inter\u00e9s de Banxico"
+        },
+        {
+          "factor_name": "VIX",
+          "average_importance": 0.004746714141219854,
+          "category": "Mercados Financieros",
+          "models_using": [
+            "XGBoost_V2_regime"
+          ],
+          "description": "\u00cdndice de volatilidad del mercado"
+        },
+        {
+          "factor_name": "steel_ma_ratio",
+          "average_importance": 0.0033881990239024162,
+          "category": "Autorregresivo",
+          "models_using": [
+            "XGBoost_V2_regime"
+          ],
+          "description": "Indicador: steel_ma_ratio"
+        },
+        {
+          "factor_name": "sp500_ma_ratio",
+          "average_importance": 0.003152053337544203,
+          "category": "Mercados Financieros",
+          "models_using": [
+            "XGBoost_V2_regime"
+          ],
+          "description": "Indicador: sp500_ma_ratio"
+        },
+        {
+          "factor_name": "iron_ma_ratio",
+          "average_importance": 0.0030946889892220497,
+          "category": "Materias Primas",
+          "models_using": [
+            "XGBoost_V2_regime"
+          ],
+          "description": "Indicador: iron_ma_ratio"
+        },
+        {
+          "factor_name": "coking_ma_ratio",
+          "average_importance": 0.0030823179986327887,
+          "category": "Materias Primas",
+          "models_using": [
+            "XGBoost_V2_regime"
+          ],
+          "description": "Indicador: coking_ma_ratio"
+        },
+        {
+          "factor_name": "price_std20",
+          "average_importance": 0.0030648289248347282,
+          "category": "Autorregresivo",
+          "models_using": [
+            "XGBoost_V2_regime"
+          ],
+          "description": "Indicador: price_std20"
+        },
+        {
+          "factor_name": "iron_return",
+          "average_importance": 0.002714217873290181,
+          "category": "Materias Primas",
+          "models_using": [
+            "XGBoost_V2_regime"
+          ],
+          "description": "Indicador: iron_return"
+        },
+        {
+          "factor_name": "coking_return",
+          "average_importance": 0.0025485975202172995,
+          "category": "Materias Primas",
+          "models_using": [
+            "XGBoost_V2_regime"
+          ],
+          "description": "Indicador: coking_return"
+        },
+        {
+          "factor_name": "steel_return",
+          "average_importance": 0.0,
+          "category": "Autorregresivo",
+          "models_using": [
+            "XGBoost_V2_regime"
+          ],
+          "description": "Indicador: steel_return"
+        },
+        {
+          "factor_name": "sp500_return",
+          "average_importance": 0.0,
+          "category": "Mercados Financieros",
+          "models_using": [
+            "XGBoost_V2_regime"
+          ],
+          "description": "Indicador: sp500_return"
+        }
+      ],
+      "feature_importance_by_model": {
+        "XGBoost_V2_regime": {
+          "feature_importance": [
+            {
+              "feature": "price_ma20",
+              "importance": 0.8166133165359497
+            },
+            {
+              "feature": "current_price",
+              "importance": 0.1506526917219162
+            },
+            {
+              "feature": "tasa_interes_banxico",
+              "importance": 0.00694234436377883
+            },
+            {
+              "feature": "VIX",
+              "importance": 0.004746714141219854
+            },
+            {
+              "feature": "steel_ma_ratio",
+              "importance": 0.0033881990239024162
+            },
+            {
+              "feature": "sp500_ma_ratio",
+              "importance": 0.003152053337544203
+            },
+            {
+              "feature": "iron_ma_ratio",
+              "importance": 0.0030946889892220497
+            },
+            {
+              "feature": "coking_ma_ratio",
+              "importance": 0.0030823179986327887
+            },
+            {
+              "feature": "price_std20",
+              "importance": 0.0030648289248347282
+            },
+            {
+              "feature": "iron_return",
+              "importance": 0.002714217873290181
+            },
+            {
+              "feature": "coking_return",
+              "importance": 0.0025485975202172995
+            },
+            {
+              "feature": "steel_return",
+              "importance": 0.0
+            },
+            {
+              "feature": "sp500_return",
+              "importance": 0.0
+            }
+          ],
+          "top_5_features": [
+            {
+              "feature": "price_ma20",
+              "importance": 0.8166133165359497
+            },
+            {
+              "feature": "current_price",
+              "importance": 0.1506526917219162
+            },
+            {
+              "feature": "tasa_interes_banxico",
+              "importance": 0.00694234436377883
+            },
+            {
+              "feature": "VIX",
+              "importance": 0.004746714141219854
+            },
+            {
+              "feature": "steel_ma_ratio",
+              "importance": 0.0033881990239024162
+            }
+          ]
+        }
+      }
+    }
+  },
+  "end_time": "2025-09-28T11:56:31.315315",
+  "execution_time_seconds": 35.504089,
+  "status": "success",
+  "summary": {
+    "execution_time": 0,
+    "stages_completed": 6,
+    "total_stages": 6,
+    "data_quality": "EXCELENTE",
+    "models_executed": 1,
+    "predictions_generated": 1,
+    "best_model": "MIDAS_V2_hibrida"
+  }
+}

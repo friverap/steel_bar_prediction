@@ -1,0 +1,86 @@
+# Dockerfile optimizado para Google Cloud Platform
+# DeAcero Steel Price Predictor V2 - Production Ready
+
+FROM python:3.11-slim
+
+# Metadatos
+LABEL maintainer="DeAcero Data Team"
+LABEL version="2.0-gcp"
+LABEL description="Steel Rebar Price Predictor V2 for GCP deployment"
+
+# Variables de entorno para GCP
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONPATH=/app
+ENV ENVIRONMENT=production
+ENV PLATFORM=gcp
+
+# Configuración de timezone
+ENV TZ=America/Mexico_City
+
+# Instalar dependencias del sistema (SIN google-cloud-sdk innecesario)
+RUN apt-get update && apt-get install -y \
+    gcc \
+    g++ \
+    curl \
+    wget \
+    git \
+    build-essential \
+    libgomp1 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Directorio de trabajo
+WORKDIR /app
+
+# Copiar requirements y instalar dependencias Python
+COPY requirements.txt .
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
+
+# Instalar dependencias específicas de GCP
+RUN pip install --no-cache-dir \
+    google-cloud-storage==2.13.0 \
+    google-cloud-secret-manager==2.18.1 \
+    google-cloud-monitoring==2.19.0 \
+    google-cloud-logging==3.9.0 \
+    google-cloud-functions==1.15.0
+
+# Crear directorios necesarios
+RUN mkdir -p /app/data/raw \
+    /app/data/processed \
+    /app/models/production \
+    /app/models/test \
+    /app/logs \
+    /app/cache \
+    /app/gcp_config
+
+# Copiar código fuente (modelos se descargarán en runtime)
+COPY . .
+
+# Copiar configuraciones específicas de GCP (COMENTADO - no existe)
+# COPY gcp_config/ /app/gcp_config/
+
+# Crear script de inicialización para GCP (SIMPLIFICADO)
+COPY docker-entrypoint-gcp-simple.sh /docker-entrypoint-gcp.sh
+RUN chmod +x /docker-entrypoint-gcp.sh
+
+# Crear usuario no-root para seguridad
+RUN groupadd -r appuser && useradd -r -g appuser appuser
+
+# Dar permisos necesarios
+RUN chown -R appuser:appuser /app
+RUN chmod +x /app/scripts/*.py
+
+# Cambiar a usuario no-root
+USER appuser
+
+# Exponer puerto para Cloud Run
+EXPOSE 8000
+
+# Health check optimizado para GCP
+HEALTHCHECK --interval=30s --timeout=30s --start-period=60s --retries=3 \
+    CMD curl -f http://localhost:8000/health || exit 1
+
+# Comando por defecto optimizado para Cloud Run
+ENTRYPOINT ["/docker-entrypoint-gcp.sh"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "1", "--access-log"]

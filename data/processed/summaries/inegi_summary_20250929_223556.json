@@ -1,0 +1,21 @@
+{
+  "source": "inegi",
+  "timestamp": "2025-09-29T22:35:56.449853",
+  "config": {
+    "collector_func": "<function collect_inegi_data at 0x10a357e20>",
+    "description": "INEGI - Indicadores econ\u00f3micos M\u00e9xico",
+    "priority": "high",
+    "frequency": "monthly",
+    "status": "functional",
+    "expected_series": 12,
+    "params": {
+      "start_date": "2020-01-01",
+      "end_date": "2025-09-29",
+      "save_raw": true
+    }
+  },
+  "data_counts": {
+    "series": 16,
+    "points": 868
+  }
+}

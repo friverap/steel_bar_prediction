@@ -1,0 +1,6 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-f', 'Dockerfile.gcp', '-t', 'gcr.io/scyf-prj-sandbox/steel-predictor:v1.0', '.']
+images:
+  - 'gcr.io/scyf-prj-sandbox/steel-predictor:v1.0'
+timeout: 1200s

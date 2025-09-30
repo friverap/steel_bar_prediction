@@ -1,0 +1,21 @@
+{
+  "source": "raw_materials",
+  "timestamp": "2025-09-29T22:19:56.870615",
+  "config": {
+    "collector_func": "<function collect_raw_materials_data at 0x10c756d40>",
+    "description": "Materias Primas - Mineral de hierro y carb\u00f3n de coque",
+    "priority": "critical",
+    "frequency": "daily",
+    "status": "functional",
+    "expected_series": 10,
+    "params": {
+      "start_date": "2020-01-01",
+      "end_date": "2025-09-29",
+      "save_raw": true
+    }
+  },
+  "data_counts": {
+    "series": 12,
+    "points": 23107
+  }
+}

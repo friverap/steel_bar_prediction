@@ -1,0 +1,623 @@
+{
+  "analysis_timestamp": "2025-09-25T16:17:25.196818",
+  "total_series_analyzed": 64,
+  "daily_series_count": 22,
+  "weekly_series_count": 0,
+  "monthly_series_count": 35,
+  "suitable_for_daily_pct": 34.375,
+  "api_real_pct": 25.0,
+  "daily_series": [
+    "BANXICO:usd_mxn",
+    "BANXICO:interest_rate",
+    "FRED:natural_gas",
+    "FRED:dxy_index",
+    "Alpha_Vantage:wti_oil",
+    "Alpha_Vantage:brent_oil",
+    "Alpha_Vantage:natural_gas",
+    "Alpha_Vantage:copper",
+    "Alpha_Vantage:aluminum",
+    "Trading_Economics:mexico_stock_market",
+    "Quandl:lme_steel",
+    "Quandl:steel_scrap_us",
+    "Quandl:copper_lme",
+    "Quandl:aluminum_lme",
+    "AHMSA:ahmsa",
+    "AHMSA:ternium_mexico",
+    "AHMSA:deacero",
+    "AHMSA:arcelormittal",
+    "AHMSA:nucor",
+    "AHMSA:steel_etf",
+    "AHMSA:materials_etf",
+    "AHMSA:emerging_markets_etf"
+  ],
+  "critical_daily": [
+    "Alpha_Vantage:natural_gas",
+    "Quandl:lme_steel",
+    "AHMSA:ternium_mexico",
+    "AHMSA:deacero"
+  ],
+  "sources_results": {
+    "BANXICO": {
+      "status": "success",
+      "error": null,
+      "series": {
+        "usd_mxn": {
+          "detected_frequency": "daily",
+          "is_daily": true,
+          "suitable_for_daily": true,
+          "total_points": 1444,
+          "coverage_from_2020": false,
+          "importance": "high"
+        },
+        "inflation_monthly": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 68,
+          "coverage_from_2020": true,
+          "importance": "high"
+        },
+        "interest_rate": {
+          "detected_frequency": "daily",
+          "is_daily": true,
+          "suitable_for_daily": true,
+          "total_points": 1444,
+          "coverage_from_2020": false,
+          "importance": "high"
+        },
+        "industrial_production": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 68,
+          "coverage_from_2020": false,
+          "importance": "medium"
+        },
+        "manufacturing_index": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 68,
+          "coverage_from_2020": false,
+          "importance": "medium"
+        },
+        "construction_materials_price": {
+          "detected_frequency": "quarterly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 21,
+          "coverage_from_2020": true,
+          "importance": "high"
+        },
+        "steel_imports": {
+          "detected_frequency": "quarterly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 22,
+          "coverage_from_2020": true,
+          "importance": "high"
+        }
+      }
+    },
+    "FRED": {
+      "status": "success",
+      "error": null,
+      "series": {
+        "natural_gas": {
+          "detected_frequency": "daily",
+          "is_daily": true,
+          "suitable_for_daily": true,
+          "total_points": 1434,
+          "coverage_from_2020": false,
+          "importance": "high"
+        },
+        "industrial_production": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 68,
+          "coverage_from_2020": true,
+          "importance": "high"
+        },
+        "ppi_metals": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 68,
+          "coverage_from_2020": true,
+          "importance": "critical"
+        },
+        "dxy_index": {
+          "detected_frequency": "daily",
+          "is_daily": true,
+          "suitable_for_daily": true,
+          "total_points": 1430,
+          "coverage_from_2020": false,
+          "importance": "high"
+        },
+        "federal_funds_rate": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 68,
+          "coverage_from_2020": true,
+          "importance": "medium"
+        },
+        "construction_spending": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 67,
+          "coverage_from_2020": true,
+          "importance": "high"
+        },
+        "steel_production": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 68,
+          "coverage_from_2020": true,
+          "importance": "critical"
+        },
+        "iron_steel_scrap": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 68,
+          "coverage_from_2020": true,
+          "importance": "high"
+        }
+      }
+    },
+    "LME": {
+      "status": "error",
+      "error": "Cannot compare tz-naive and tz-aware timestamps"
+    },
+    "Alpha_Vantage": {
+      "status": "success",
+      "error": null,
+      "series": {
+        "wti_oil": {
+          "detected_frequency": "daily",
+          "is_daily": true,
+          "suitable_for_daily": true,
+          "total_points": 366,
+          "coverage_from_2020": false,
+          "importance": "high"
+        },
+        "brent_oil": {
+          "detected_frequency": "daily",
+          "is_daily": true,
+          "suitable_for_daily": true,
+          "total_points": 366,
+          "coverage_from_2020": false,
+          "importance": "high"
+        },
+        "natural_gas": {
+          "detected_frequency": "daily",
+          "is_daily": true,
+          "suitable_for_daily": true,
+          "total_points": 366,
+          "coverage_from_2020": false,
+          "importance": "critical"
+        },
+        "copper": {
+          "detected_frequency": "daily",
+          "is_daily": true,
+          "suitable_for_daily": true,
+          "total_points": 366,
+          "coverage_from_2020": false,
+          "importance": "high"
+        },
+        "aluminum": {
+          "detected_frequency": "daily",
+          "is_daily": true,
+          "suitable_for_daily": true,
+          "total_points": 366,
+          "coverage_from_2020": false,
+          "importance": "medium"
+        }
+      }
+    },
+    "Trading_Economics": {
+      "status": "success",
+      "error": null,
+      "series": {
+        "mexico_stock_market": {
+          "detected_frequency": "daily",
+          "is_daily": true,
+          "suitable_for_daily": true,
+          "total_points": 731,
+          "coverage_from_2020": false,
+          "importance": "high"
+        },
+        "mexico_inflation": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 68,
+          "coverage_from_2020": false,
+          "importance": "critical"
+        },
+        "mexico_interest_rate": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 68,
+          "coverage_from_2020": false,
+          "importance": "high"
+        },
+        "mexico_gdp": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 24,
+          "coverage_from_2020": false,
+          "importance": "high"
+        },
+        "mexico_manufacturing": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 68,
+          "coverage_from_2020": false,
+          "importance": "high"
+        }
+      }
+    },
+    "Quandl": {
+      "status": "success",
+      "error": null,
+      "series": {
+        "lme_steel": {
+          "detected_frequency": "daily",
+          "is_daily": true,
+          "suitable_for_daily": true,
+          "total_points": 2095,
+          "coverage_from_2020": true,
+          "importance": "critical"
+        },
+        "lme_iron_ore": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 68,
+          "coverage_from_2020": false,
+          "importance": "critical"
+        },
+        "steel_scrap_us": {
+          "detected_frequency": "daily",
+          "is_daily": true,
+          "suitable_for_daily": true,
+          "total_points": 2095,
+          "coverage_from_2020": true,
+          "importance": "high"
+        },
+        "copper_lme": {
+          "detected_frequency": "daily",
+          "is_daily": true,
+          "suitable_for_daily": true,
+          "total_points": 2095,
+          "coverage_from_2020": true,
+          "importance": "high"
+        },
+        "aluminum_lme": {
+          "detected_frequency": "daily",
+          "is_daily": true,
+          "suitable_for_daily": true,
+          "total_points": 2095,
+          "coverage_from_2020": true,
+          "importance": "medium"
+        }
+      }
+    },
+    "INEGI": {
+      "status": "success",
+      "error": null,
+      "series": {
+        "inpc_general": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 68,
+          "coverage_from_2020": false,
+          "importance": "high"
+        },
+        "inpc_subyacente": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 68,
+          "coverage_from_2020": false,
+          "importance": "medium"
+        },
+        "inpc_mercancias": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 68,
+          "coverage_from_2020": false,
+          "importance": "medium"
+        },
+        "inpc_servicios": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 68,
+          "coverage_from_2020": false,
+          "importance": "medium"
+        },
+        "inpc_no_subyacente": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 68,
+          "coverage_from_2020": false,
+          "importance": "medium"
+        },
+        "inpc_agropecuario": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 68,
+          "coverage_from_2020": false,
+          "importance": "low"
+        },
+        "inpc_energeticos": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 68,
+          "coverage_from_2020": false,
+          "importance": "medium"
+        }
+      }
+    },
+    "World_Bank": {
+      "status": "success",
+      "error": null,
+      "series": {
+        "iron_ore": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 12,
+          "coverage_from_2020": false,
+          "importance": "critical"
+        },
+        "coal_australian": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 12,
+          "coverage_from_2020": false,
+          "importance": "high"
+        },
+        "crude_oil_avg": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 12,
+          "coverage_from_2020": false,
+          "importance": "high"
+        },
+        "natural_gas_us": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 12,
+          "coverage_from_2020": false,
+          "importance": "high"
+        },
+        "steel_export_price": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 12,
+          "coverage_from_2020": false,
+          "importance": "critical"
+        }
+      }
+    },
+    "DataMexico": {
+      "status": "success",
+      "error": null,
+      "series": {
+        "steel_imports": {
+          "detected_frequency": "annual",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 3,
+          "coverage_from_2020": false,
+          "importance": "critical"
+        },
+        "steel_exports": {
+          "detected_frequency": "annual",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 3,
+          "coverage_from_2020": false,
+          "importance": "high"
+        },
+        "manufacturing_employment": {
+          "detected_frequency": "annual",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 3,
+          "coverage_from_2020": false,
+          "importance": "medium"
+        },
+        "steel_production_value": {
+          "detected_frequency": "annual",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 3,
+          "coverage_from_2020": false,
+          "importance": "high"
+        }
+      }
+    },
+    "Datos_Gob": {
+      "status": "success",
+      "error": null,
+      "series": {
+        "public_works": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 50,
+          "coverage_from_2020": false,
+          "importance": "high"
+        },
+        "government_contracts": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 50,
+          "coverage_from_2020": false,
+          "importance": "medium"
+        },
+        "infrastructure_investment": {
+          "detected_frequency": "annual",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 3,
+          "coverage_from_2020": false,
+          "importance": "high"
+        },
+        "industrial_permits": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 36,
+          "coverage_from_2020": false,
+          "importance": "medium"
+        }
+      }
+    },
+    "AHMSA": {
+      "status": "success",
+      "error": null,
+      "series": {
+        "ahmsa": {
+          "detected_frequency": "business_daily",
+          "is_daily": true,
+          "suitable_for_daily": true,
+          "total_points": 1443,
+          "coverage_from_2020": false,
+          "importance": "high"
+        },
+        "ternium_mexico": {
+          "detected_frequency": "business_daily",
+          "is_daily": true,
+          "suitable_for_daily": true,
+          "total_points": 1440,
+          "coverage_from_2020": false,
+          "importance": "critical"
+        },
+        "deacero": {
+          "detected_frequency": "daily",
+          "is_daily": true,
+          "suitable_for_daily": true,
+          "total_points": 2095,
+          "coverage_from_2020": true,
+          "importance": "critical"
+        },
+        "arcelormittal": {
+          "detected_frequency": "business_daily",
+          "is_daily": true,
+          "suitable_for_daily": true,
+          "total_points": 1440,
+          "coverage_from_2020": false,
+          "importance": "high"
+        },
+        "nucor": {
+          "detected_frequency": "business_daily",
+          "is_daily": true,
+          "suitable_for_daily": true,
+          "total_points": 1440,
+          "coverage_from_2020": false,
+          "importance": "medium"
+        },
+        "steel_etf": {
+          "detected_frequency": "business_daily",
+          "is_daily": true,
+          "suitable_for_daily": true,
+          "total_points": 1440,
+          "coverage_from_2020": false,
+          "importance": "high"
+        },
+        "materials_etf": {
+          "detected_frequency": "business_daily",
+          "is_daily": true,
+          "suitable_for_daily": true,
+          "total_points": 1440,
+          "coverage_from_2020": false,
+          "importance": "high"
+        },
+        "emerging_markets_etf": {
+          "detected_frequency": "business_daily",
+          "is_daily": true,
+          "suitable_for_daily": true,
+          "total_points": 1440,
+          "coverage_from_2020": false,
+          "importance": "medium"
+        }
+      }
+    },
+    "CANACERO": {
+      "status": "success",
+      "error": null,
+      "series": {
+        "steel_production_mexico": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 68,
+          "coverage_from_2020": false,
+          "importance": "critical"
+        },
+        "steel_consumption_mexico": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 68,
+          "coverage_from_2020": false,
+          "importance": "critical"
+        },
+        "steel_imports_mexico": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 68,
+          "coverage_from_2020": false,
+          "importance": "high"
+        },
+        "steel_exports_mexico": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 68,
+          "coverage_from_2020": false,
+          "importance": "high"
+        },
+        "capacity_utilization": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 68,
+          "coverage_from_2020": false,
+          "importance": "critical"
+        },
+        "rebar_production": {
+          "detected_frequency": "monthly",
+          "is_daily": false,
+          "suitable_for_daily": false,
+          "total_points": 68,
+          "coverage_from_2020": false,
+          "importance": "critical"
+        }
+      }
+    }
+  }
+}

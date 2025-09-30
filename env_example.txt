@@ -1,0 +1,76 @@
+# DeAcero Steel Price Predictor API Configuration
+# Archivo de ejemplo - NO incluye valores reales de API keys
+
+# =============================================================================
+# API CONFIGURATION
+# =============================================================================
+HOST=0.0.0.0
+PORT=8000
+DEBUG=True
+
+# =============================================================================
+# SECURITY
+# =============================================================================
+API_KEY=your_secret_api_key_here_change_this_in_production
+ADMIN_API_KEY=your_admin_api_key_for_cloud_functions_only
+RATE_LIMIT_PER_HOUR=100
+
+# =============================================================================
+# CACHE CONFIGURATION
+# =============================================================================
+CACHE_EXPIRY_HOURS=1
+REDIS_URL=redis://localhost:6379
+
+# =============================================================================
+# DATABASE CONFIGURATION
+# =============================================================================
+DATABASE_URL=sqlite:///./deacero.db
+
+# =============================================================================
+# EXTERNAL API KEYS - CONFIGURAR CON VALORES REALES
+# =============================================================================
+
+# BANXICO (Banco de México)
+BANXICO_API_TOKEN=your_banxico_token_here
+
+# FRED (Federal Reserve Economic Data)
+FRED_API_KEY=your_fred_api_key_here
+
+# Trading Economics - Indicadores
+TRADING_ECONOMICS_API_KEY=your_trading_economics_key_here
+
+# Quandl/Nasdaq Data Link
+QUANDL_API_KEY=your_quandl_api_key_here
+
+# INEGI (Instituto Nacional de Estadística y Geografía)
+INEGI_API_TOKEN=your_inegi_token_here
+
+# =============================================================================
+# DATA COLLECTION CONFIGURATION
+# =============================================================================
+
+# Rango de fechas para todas las series temporales
+DATA_START_DATE=2020-01-01
+DATA_END_DATE=2025-09-25
+
+# Model Configuration
+MODEL_PATH=./data/models/steel_price_model.pkl
+MODEL_UPDATE_INTERVAL_HOURS=24
+
+# Data Sources Configuration
+DATA_UPDATE_INTERVAL_HOURS=6
+HISTORICAL_DATA_DAYS=2000
+
+# =============================================================================
+# LOGGING CONFIGURATION
+# =============================================================================
+LOG_LEVEL=INFO
+LOG_FILE=./logs/deacero_api.log
+
+# =============================================================================
+# PRODUCTION SETTINGS (para deployment)
+# =============================================================================
+# DEBUG=False
+# LOG_LEVEL=WARNING
+# CACHE_EXPIRY_HOURS=4
+# RATE_LIMIT_PER_HOUR=1000

@@ -1,0 +1,21 @@
+{
+  "source": "yahoo_finance",
+  "timestamp": "2025-09-29T22:51:03.281550",
+  "config": {
+    "collector_func": "<function collect_yahoo_finance_data at 0x16c1fafc0>",
+    "description": "Yahoo Finance - Commodities, \u00edndices y acciones",
+    "priority": "critical",
+    "frequency": "daily",
+    "status": "functional",
+    "expected_series": 15,
+    "params": {
+      "start_date": "2020-01-01",
+      "end_date": "2025-09-29",
+      "period": "5y"
+    }
+  },
+  "data_counts": {
+    "series": 12,
+    "points": 17314
+  }
+}
