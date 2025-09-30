@@ -1,4 +1,4 @@
-# 🏗️ DeAcero Steel Rebar Price Predictor V1
+# 🏗️ Steel Rebar Price Predictor V1
 
 Sistema avanzado de predicción de precios de varilla corrugada que combina análisis econométrico riguroso con machine learning, desarrollado como solución integral para pronóstico del precio de cierre del día siguiente.
 
