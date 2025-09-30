@@ -66,7 +66,7 @@ python deploy_production.py --basic-deploy
 5. **Verificar que funciona**
 ```bash
 # Test de predicción
-curl -H "X-API-Key: gusanito_medidor" http://localhost:8000/predict/steel-rebar-price
+curl -H "X-API-Key: clave_secreta" http://localhost:8000/predict/steel-rebar-price
 
 # Documentación interactiva
 open http://localhost:8000/docs
