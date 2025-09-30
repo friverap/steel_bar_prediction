@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🏗️ DeAcero Steel Rebar Price Predictor
+# 🏗️ Steel Rebar Price Predictor
 
 ### Sistema Avanzado de Predicción de Precios de Varilla Corrugada
 
@@ -136,7 +136,7 @@ docker-compose --version  # 2.0+
 
 ```bash
 git clone <repository-url>
-cd deacero_steel_price_predictor
+cd steel_price_predictor
 
 # Configurar variables de entorno
 cp env_example.txt .env
@@ -196,8 +196,8 @@ docker-compose logs -f steel-predictor
 <summary><b>🔧 Opción C: Python Virtual Environment</b></summary>
 
 ```bash
-python -m venv deacero_env
-source deacero_env/bin/activate
+python -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
 uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
@@ -237,7 +237,7 @@ open http://localhost:8000/docs
 ### 📁 Estructura Modular
 
 ```
-deacero_steel_price_predictor/
+steel_price_predictor/
 │
 ├── 🚀 app/                      # Aplicación FastAPI
 │   ├── main.py                 # Entry point
@@ -432,14 +432,14 @@ pytest tests/test_data_ingestion/ -v
 ### 🐳 Docker
 
 ```bash
-docker build -t deacero-api:prod .
+docker build -t api:prod .
 
 docker run -d \
-  --name deacero-api \
+  --name api \
   -p 8000:8000 \
   -e API_KEY=prod_key \
   -e DEBUG=false \
-  deacero-api:prod
+  api:prod
 ```
 
 ### ☁️ Google Cloud Platform
