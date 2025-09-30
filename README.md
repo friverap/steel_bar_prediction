@@ -141,7 +141,7 @@ docker-compose up --build
 
 ```bash
 curl -X GET "http://localhost:8000/predict/steel-rebar-price" \
-     -H "X-API-Key: gusanito_medidor"
+     -H "X-API-Key: clave_secreta"
 ```
 
 **Respuesta esperada:**
